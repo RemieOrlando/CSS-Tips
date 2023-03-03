@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>CSS Tips: Part 1</title>
+<style>
+/* The CSS element Selector */
+body {
+  background-color: white;
+}
+h1 {
+  color: black;
+  text-align: left;
+}
+p {
+  color: black;
+  text-align: left;
+} 
+
+/* The CSS Id Selector */
+#para1 {
+  text-align: left;
+  color: blue;
+}
+
+/* The CSS Class Selector */
+.left {
+  text-align: left;
+  color: navy;
+}
+
+p.left1 {
+  text-align: left;
+  color: slateblue;
+}
+
+p.text {
+  font-family: courier;
+}
+
+/* The CSS Grouping Selector */
+h2, h3, h4 {
+  text-align: left;
+  color: darkblue;
+}
+
+/* Opacity / Transparency */
+div {
+  background-color: darkcyan;
+}
+
+div.first {
+  opacity: 0.1;
+}
+
+div.second {
+  opacity: 0.3;
+}
+
+div.third {
+  opacity: 0.6;
+}
+
+/* Background Image */
+p.background {
+  background-image: url("paper.gif");
+}
+
+/* Background Repeat */
+div.backgroundimg {
+  background-image: url("gradient_bg.png");
+  background-repeat: repeat-x;
+}
+/* Tip: To repeat an image vertically, set background-repeat: repeat-y; */
+
+/* Background Position */
+div.bgpos {
+  width: 100%
+  text-align: justify;
+}
+
+div.bgim {
+  background-repeat: no-repeat;
+  background-position: right top;
+  margin-right: 200px;
+}
+
+/* Background Shorthand */
+div.sh {
+ background: #ffffff url("paper.gif");
+ margin-right: 200px;
+ width: 100%;
+}
+
+/* Border Width */
+p.one {
+  border-style: solid;
+  border-width: 5px;
+}
+
+p.two {
+  border-style: solid;
+  border-width: medium;
+}
+
+p.three {
+  border-style: dotted;
+  border-width: 2px;
+}
+
+p.four {
+  border-style: dotted;
+  border-width: thick;
+}
+
+p.five {
+  border-style: double;
+  border-width: 15px;
+}
+
+p.six {
+  border-style: double;
+  border-width: thick;
+}
+
+/* Specific Side Widths */
+p.seven {
+  border-style: solid;
+  border-width: 5px 20px; /* 5px top and bottom, 20px on the sides */
+}
+
+p.eight {
+  border-style: solid;
+  border-width: 20px 5px; /* 20px top and bottom, 5px on the sides */
+}
+
+p.nine {
+  border-style: solid;
+  border-width: 25px 10px 4px 35px; /* 25px top, 10px right, 4px bottom and 35px left */
+}
+
+p.ten {
+  border-style: solid;
+  border-color: red;
+}
+
+p.eleven {
+  border-style: solid;
+  border-color: green;
+} 
+
+p.twelve {
+  border-style: dotted;
+  border-color: blue;
+} 
+
+p.thirteen {
+  border-style: solid;
+  border-color: red green blue yellow; /* red top, green right, blue bottom and yellow left */
+}
+
+/* Rounded Borders */
+p.normal {
+  border: 2px solid red;
+  padding: 5px;
+}
+
+p.round1 {
+  border: 2px solid red;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+p.round2 {
+  border: 2px solid red;
+  border-radius: 8px;
+  padding: 5px;
+}
+
+p.round3 {
+  border: 2px solid red;
+  border-radius: 12px;
+  padding: 5px;
+}
+
+/* Margin Properties */
+div.margin {
+  border: 1px solid black;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-right: 150px;
+  margin-left: 80px;
+  background-color: lightblue;
+}
+
+div.auto {
+  width: 300px;
+  margin: auto;
+  border: 1px solid navy;
+  background-color: lightblue;
+}
+
+div.inherit {
+  border: 1px solid navy;
+  margin-left: 50px;
+  background-color: lightblue;
+}
+
+p.ex1 {
+  margin-left: inherit;
+}
+
+h1.heading1 {
+  margin: 0 0 50px 0;
+}
+
+h2.heading2 {
+  margin: 20px 0 0 0;
+}
+</style>
+</head>
+<body>
+
+<h1>CSS Tips: Part 1</h1>
+<p>The element selector selects HTML elements based on the element name. Every paragraph will be affected by this style.</p>
+
+<p id="para1">The id selector uses the id attribute of an HTML element to select a specific element. This paragraph is not affected by the previous style.</p>
+
+<p class="left">The class selector selects HTML elements with a specific class attribute.</p>
+
+<p class="left1">You can also specify that only specific HTML elements should be affected by a class.</p>
+
+<p class="left1 text">HTML elements can also refer to more than one class. In this example the p element will be styled according to class="left1" and to class="text"</p>
+
+<!-- The universal selector (*) selects all HTML elements on the page. -->
+
+<h2>The CSS Grouping Selector</h1>
+<h3>The grouping selector selects all the HTML elements with the same style definitions.</h2>
+<h4>In this example we have grouped the selectors from the code above:</p>
+
+<!-- External styles are defined within the <link> element, inside the <head> section of an HTML page:
+<link rel="stylesheet" href="mystyle.css">
+An external style sheet can be written in any text editor, and must be saved with a .css extension.
+
+Note: Do not add a space between the property value and the unit:
+Incorrect (space): margin-left: 20 px;
+Correct (nospace): margin-left: 20px;
+
+Internal styles are defined within the <style> element, inside the <head> section of an HTML page:
+
+Inline styles are defined within the "style" attribute of the relevant element:
+
+An inline style has the highest priority, and will override external and internal styles and browser defaults.
+-->
+
+<p style="background-color:DodgerBlue;">You can set the background color for HTML elements:</p>
+
+<p style="border:2px solid Aquamarine;">You can set the color of borders<p>
+
+<!-- In CSS, colors can also be specified using RGB values, HEX values, HSL values, RGBA values, and HSLA values -->
+
+<h1>Transparent Boxes</h1>
+
+<p>When using the opacity property to add transparency to the background of an element, all of its child elements become transparent as well. This can make the text inside a fully transparent element hard to read:</p>
+
+<div class="first">
+  <h1>opacity 0.1</h1>
+</div>
+
+<div class="second">
+  <h1>opacity 0.3</h1>
+</div>
+
+<div class="third">
+  <h1>opacity 0.6</h1>
+</div>
+
+<div>
+  <h1>opacity 1 (default)</h1>
+</div>
+
+<h1>Background Image</h1>
+
+<p class="background">This paragraph has an image as the background!</p>
+
+<div class="backgroundimg">
+ <h1>Background Image Repeat</h1>
+ <p>Here, a background image is repeated only horizontally!</p><br>
+</div>
+
+<!-- Background Repeat + Position -->
+<div class="bgpos bgimg">
+  <h1>Background Position</h1>
+  <p>Here, the background image is only shown once. In addition it is positioned away from the text. </p> 
+  <p>In this example we have also added a margin on the right side, so that the background image will not disturb the text.</p>
+  <p>The background-position property is used to specify the position of the background image.</p>
+  <img src="img_tree.png">
+</div>
+
+<!-- The background-attachment property specifies whether the background image should scroll or be fixed (will not scroll with the rest of the page). Use the following line of code: background-attachment: fixed; 
+
+If otherwise, Specify that the background image should scroll with the rest of the page: background-attachment: scroll;
+-->
+
+<div class="sh">
+  <h1>The background Property</h1>
+  <p>The background property is a shorthand property for specifying all the background properties in one declaration.</p>
+  <p>The purpose of this property is to shorten the code.</p>
+</div>
+
+<!-- Note: When using the shorthand property the order of the property values is;
+  background-color
+  background-image
+  background-repeat
+  background-attachment
+  background-position
+-->
+
+<!-- The border-style property specifies what kind of border to display:
+
+  dotted - Defines a dotted border
+  dashed - Defines a dashed border
+  solid - Defines a solid border
+  double - Defines a double border
+  groove - Defines a 3D grooved border.
+  ridge - Defines a 3D ridged border.
+  inset - Defines a 3D inset border.
+  outset - Defines a 3D outset border.
+  none - Defines no border
+  hidden - Defines a hidden border
+-->
+
+<h1>The border-width Property</h1>
+<p>This property specifies the width of the four borders:</p>
+
+<p class="one">1+1=2.</p>
+<p class="two">2+2=4.</p>
+<p class="three">4+4=8.</p>
+<p class="four">8+8=16.</p>
+<p class="five">16+16=32.</p>
+<p class="six">32+32=64.</p>
+
+<p><b>Note:</b> The "border-width" property does not work if it is used alone. 
+Always specify the "border-style" property to set the borders first.</p>
+
+<h2>Specific border-width</h2>
+<p>The border-width property can have from one to four values (for the top border, right border, bottom border, and the left border):</p>
+
+<p class="seven">1*1=1.</p>
+<p class="eight">2*2=4.</p>
+<p class="nine">3*3=9.</p>
+
+<h1>The border-color Property</h1>
+<p>This property specifies the color of the four borders:</p>
+
+<p class="ten">A solid red border</p>
+<p class="eleven">A solid green border</p>
+<p class="twelve">A dotted blue border</p>
+
+<p><b>Note:</b> The "border-color" property does not work if it is used alone. Use the "border-style" property to set the borders first.</p>
+
+<h1>The border-color Property</h1>
+<p>The border-color property can have from one to four values (for the top border, right border, bottom border, and the left border):</p>
+
+<p class="thirteen">A solid multicolor border</p>
+
+<!-- If the border-style property has four values:
+
+border-style: dotted solid double dashed;
+  top border is dotted
+  right border is solid
+  bottom border is double
+  left border is dashed
+-->
+
+<!-- The border property is a shorthand property for the following individual border properties:
+
+border-width
+border-style (required)
+border-color 
+-->
+
+<h1>The border-radius Property</h1>
+<p>This property is used to add rounded borders to an element:</p>
+
+<p class="normal">Normal border</p>
+<p class="round1">Round border</p>
+<p class="round2">Rounder border</p>
+<p class="round3">Roundest border</p>
+
+<!-- CSS has properties for specifying the margin for each side of an element:
+  margin-top
+  margin-right
+  margin-bottom
+  margin-left
+  
+All the margin properties can have the following values:
+  auto - the browser calculates the margin
+  length - specifies a margin in px, pt, cm, etc.
+  % - specifies a margin in % of the width of the containing element
+  inherit - specifies that the margin should be inherited from the parent element
+Tip: Negative values are allowed.
+-->
+
+<h1>Using individual margin properties</h1>
+
+<div class="margin">This div element has a top margin of 30px, a right margin of 150px, a bottom margin of 30px, and a left margin of 80px.</div>
+
+<!-- The margin property is a shorthand property for the following individual margin properties: margin-top, margin-right, margin-bottom, margin-left; The margin property has four values -->
+
+<h2>Use of margin: auto</h2>
+<p>You can set the margin property to auto to horizontally center the element within its container. The element will then take up the specified width, and the remaining space will be split equally between the left and right margins:</p>
+
+<div class="auto">
+This div will be horizontally centered because it has margin: auto;
+</div>
+
+
+<h2>Use of the inherit value</h2>
+<p>Let the left margin be inherited from the parent element:</p>
+
+<div class="inherit">
+<p class="ex1">This paragraph has an inherited left margin (from the div element).</p>
+</div>
+
+<p>In this example the h1 element has a bottom margin of 50px and the h2 element has a top margin of 20px. So, the vertical margin between h1 and h2 should have been 70px (50px + 20px). However, due to margin collapse, the actual margin ends up being 50px.</p>
+
+<h1 class="heading1">Heading 1</h1>
+<h2 class="heading2">Heading 2</h2>
+
+</body>
+</html>
