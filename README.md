@@ -1,2 +1,2 @@
 # CSS-Tips
-IntROduction to CSS
+Introduction to CSS
