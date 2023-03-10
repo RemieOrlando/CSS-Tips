@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSS Tips: Part 4</title>
+<style>
+/* unvisited link */
+a:link {
+  color: red;
+}
+
+/* visited link */
+a:visited {
+  color: green;
+}
+
+/* mouse over link */
+a:hover {
+  color: hotpink;
+}
+
+/* selected link */
+a:active {
+  color: blue;
+}
+
+a.highlight:hover {
+  color: #ff0000;
+  font-size: 22px;
+} 
+
+/* Div Hover */
+div.hover {
+  background-color: green;
+  color: white;
+  padding: 25px;
+  text-align: center;
+}
+
+.hover2:hover {
+  background-color: blue;
+}
+
+/* Simple Tooltip Hover */ 
+.tooltip {
+  display: none;
+  background-color: yellow;
+  padding: 20px;
+}
+
+.tool:hover .tooltip {
+  display: block;
+}
+
+/* The :first-child Pseudo-class */
+.first:first-child {
+  color: blue;
+}
+
+.first2 i:first-child {
+  color: blue;
+}
+
+.first3:first-child i {
+  color: blue;
+} 
+
+/* The :lang Pseudo-class */
+q:lang(no) {
+  quotes: "~" "~";
+}
+
+/* The ::first-line pseudo-element */
+.element::first-line {
+  color: red;
+  font-variant: small-caps;
+}
+
+.element2::first-letter {
+  color: red;
+  font-size: xx-large;
+}
+
+/* Multiple pseudo-elements */
+.element3::first-letter {
+  color: red;
+  font-size: xx-large;
+}
+
+.element3::first-line {
+  color: navy;
+  font-variant: small-caps;
+}
+
+/* The ::before Pseudo-element */
+.before::before {
+  content: url(smiley.gif);
+}
+
+/* The ::after Pseudo-element */
+.after::after {
+  content: url(smiley.gif);
+}
+
+/* The ::marker Pseudo-element */
+.mark::marker { 
+  color: red;
+  font-size: 23px;
+}
+
+/* The ::selection Pseudo-element */
+.select::selection {
+  color: red;
+  background: yellow;
+}
+
+/* Opacity */
+.img {
+  opacity: 0.5;
+}
+
+.img:hover {
+  opacity: 1.0;
+}
+
+/* Transparent Box */
+div.primary {
+  background-color: #4CAF50;
+  padding: 10px;
+}
+
+div.second {
+  opacity: 0.1;
+}
+
+div.third {
+  opacity: 0.3;
+}
+
+div.fourth {
+  opacity: 0.6;
+}
+
+/* Text in Transparent Box */
+div.background {
+  background: url(klematis.jpg) repeat;
+  border: 2px solid black;
+}
+
+div.transbox {
+  margin: 30px;
+  background-color: #ffffff;
+  border: 1px solid black;
+  opacity: 0.6;
+}
+
+div.transbox p {
+  margin: 5%;
+  font-weight: bold;
+  color: #000000;
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Style The Dropdown Button */
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown2 {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content2 {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content2 .list3 {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content2 .list3:hover {background-color: #f1f1f1}
+
+.dropdown2:hover .dropdown-content2 {
+  display: block;
+}
+
+.dropdown2:hover .dropbtn {
+  background-color: #3e8e41;
+}
+
+/* Dropdown Image */
+.dropdown3 {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content3 {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown3:hover .dropdown-content3 {
+  display: block;
+}
+
+.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+/* Dropdown Menu inside Navigation Bar */
+.drop {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.list {
+  float: left;
+}
+
+.list a.link, .dropbtn2 {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.list a.link:hover, .dropdown4:hover .dropbtn2 {
+  background-color: red;
+}
+
+.list dropdown4 {
+  display: inline-block;
+}
+
+.dropdown-content4 {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content4 a.link {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content4 a.link:hover {background-color: #f1f1f1;}
+
+.dropdown4:hover .dropdown-content4 {
+  display: block;
+}
+
+/* Image Sprites */
+#navlist {
+  position: relative;
+}
+
+#navlist li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: absolute;
+  top: 0;
+}
+
+#navlist li, #navlist a {
+  height: 44px;
+  display: block;
+}
+
+#home {
+  left: 0px;
+  width: 46px;
+  background: url('img_navsprites.gif') 0 0;
+}
+
+#prev {
+  left: 63px;
+  width: 43px;
+  background: url('img_navsprites.gif') -47px 0;
+}
+
+#next {
+  left: 129px;
+  width: 43px;
+  background: url('img_navsprites.gif') -91px 0;
+}
+
+#home a:hover {
+  background: url('img_navsprites_hover.gif') 0 -45px;
+}
+
+#prev a:hover {
+  background: url('img_navsprites_hover.gif') -47px -45px;
+}
+
+#next a:hover {
+  background: url('img_navsprites_hover.gif') -91px -45px;
+}
+
+/* Attribute Selector */
+[title~="flower"] {
+  border: 5px solid yellow;
+}
+
+[class|="top"] {
+  background: yellow;
+}
+
+[class^="initial"] {
+  background: yellow;
+}
+
+[class$="test"] {
+  background: yellow;
+}
+
+/* Styling Forms */
+input[type="text"] {
+  width: 150px;
+  display: block;
+  margin-bottom: 10px;
+  background-color: yellow;
+}
+
+input[type="button"] {
+  width: 120px;
+  margin-left: 35px;
+  display: block;
+}
+
+</style>
+</head>
+<body>
+
+<h1>CSS Tips: Part 4</h1>
+
+<!-- Pseudo-class Syntax:
+  selector:pseudo-class {
+    property: value;
+  }
+-->
+
+<h2>Pseudo-classes - Styling a link depending on state</h2>
+
+<p><b><a href="default.asp" target="_blank">This is a link</a></b></p>
+<p><b>Note:</b> a:hover MUST come after a:link and a:visited in the CSS definition in order to be effective.</p>
+<p><b>Note:</b> a:active MUST come after a:hover in the CSS definition in order to be effective.</p>
+
+<h2>Pseudo-classes and HTML Classes</h2>
+
+<p>When you hover over the link below, it will change color and font size:</p>
+
+<p><a class="highlight" href="css_syntax.asp">CSS Syntax</a></p>
+
+<h2>Hover on 'div'</h2>
+
+<p>Mouse over the div element below to change its background color:</p>
+
+<div class="hover hover2">Mouse Over Me</div><br><br>
+
+<div class="tool">Hover over this div element to show the p element
+  <p class="tooltip">Tada! Here I am!</p>
+</div>
+
+<h2>1. The :first-child Pseudo-class</h2>
+
+<p><strong>The selector matches any 'p' element that is the first child of any element:</strong></p>
+
+<div>
+  <p class="first">This is some text.</p>
+  <p class="first">This is some text.</p>
+</div>
+
+<p><strong>The selector matches the first 'i' element in all 'p' elements:</strong></p>
+
+<p class="first2">I am a <i>strong</i> person. I am a <i>strong</i> person.</p>
+<p class="first2">I am a <i>strong</i> person. I am a <i>strong</i> person.</p>
+
+<p><strong>The selector matches all 'i' elements in 'p' elements that are the first child of another element:</strong></p>
+
+<div>
+  <p class="first3">I am a <i>strong</i> person. I am a <i>strong</i> person.</p>
+  <p class="first3">I am a <i>strong</i> person. I am a <i>strong</i> person.</p>
+</div>
+
+<h2>2. The :lang Pseudo-class</h2>
+
+<p>Some text <q lang="no">A quote in a paragraph</q> Some text.</p>
+<p>In this example, :lang defines the quotation marks for q elements with lang="no":</p>
+
+<!-- Pseudo-element Syntax:
+  selector::pseudo-element {
+	property: value;
+  }
+-->
+
+<h1>Pseudo-elements and HTML Classes</h1>
+
+<p>Pseudo-elements can be combined with HTML classes:</p>
+
+<h2>1. The ::first-line pseudo-element</h2>
+
+<p class="element">You can use the ::first-line pseudo-element to add a special effect to the first line of a text. Some more text. And even more, and more, and more, and more, and more, and more, and more, and more, and more, and more, and more, and more.</p>
+
+<h2>2. The ::first-letter pseudo-element</h2>
+
+<p class="element2">You can use the ::first-letter pseudo-element to add a special effect to the first character of a text!</p>
+
+<h2>Multiple pseudo-elements</h2>
+
+<p class="element3">You can combine the ::first-letter and ::first-line pseudo-elements to add a special effect to the first letter and the first line of a text!</p>
+
+<h2>3. The ::before Pseudo-element</h2>
+
+<h3 class="before">This is a heading</h3>
+<p>The ::before pseudo-element inserts content before the content of an element.</p>
+
+<h3 class="before">This is a heading</h3>
+
+<h2>4. The ::after Pseudo-element</h2>
+
+<h3 class="after">This is a heading</h3>
+<p>The ::after pseudo-element inserts content after the content of an element.</p>
+
+<h3 class="after">This is a heading</h3>
+
+<h2>5. The ::marker Pseudo-element</h2>
+<p>The ::marker pseudo-element selects the markers of list items.</p>
+
+  <ul>
+  	<li class="mark">Coffee</li>
+  	<li class="mark">Tea</li>
+  	<li class="mark">Milk</li>
+  </ul>
+
+  <ol>
+    <li class="mark">First</li>
+    <li class="mark">Second</li>
+    <li class="mark">Third</li>
+  </ol>
+
+<h2>6. The ::selection Pseudo-element</h2>
+<p>The ::selection pseudo-element matches the portion of an element that is selected by a user.</p>
+
+<h3 class="select">Select some text on below:</h3>
+
+<p class="select">This is a paragraph.</p>
+<div class="select">This is some text in a div element.</div>
+
+<h1>Image Transparency</h1>
+<p>The opacity property is often used together with the :hover selector to change the opacity on mouse-over:</p>
+<img class="img" src="img_forest.jpg" alt="Forest" width="170" height="100">
+<img class="img" src="img_mountains.jpg" alt="Mountains" width="170" height="100">
+<img class="img" src="img_5terre.jpg" alt="Italy" width="170" height="100">
+
+<h1>Transparent Box</h1>
+<p>When using the opacity property to add transparency to the background of an element, all of its child elements become transparent as well. This can make the text inside a fully transparent element hard to read:</p>
+
+<div class="primary second"><p>opacity 0.1</p></div>
+<div class="primary third"><p>opacity 0.3</p></div>
+<div class="primary fourth"><p>opacity 0.6</p></div>
+<div class="primary"><p>opacity 1 (default)</p></div>
+
+<h1>Text in a Transparent Box</h1>
+<div class="background">
+  <div class="transbox">
+    <p>This is some text that is placed in the transparent box.</p>
+  </div>
+</div>
+
+<h2>Hoverable Dropdown</h2>
+<p>Move the mouse over the text below to open the dropdown content.</p>
+
+<div class="dropdown">
+  <span>Mouse over me</span>
+  <div class="dropdown-content">
+  <p>Hello World!</p>
+  </div>
+</div>
+
+<h2>Dropdown Menu</h2>
+<p>Move the mouse over the button to open the dropdown menu.</p>
+
+<div class="dropdown2">
+  <button class="dropbtn">Dropdown</button>
+  <div class="dropdown-content2">
+    <a href="#" class="list3">Link 1</a>
+    <a href="#" class="list3">Link 2</a>
+    <a href="#" class="list3">Link 3</a>
+  </div>
+</div>
+
+<p><strong>Note:</strong> We use href="#" for test links. In a real web site this would be URLs.</p>
+
+<h2>Dropdown Image</h2>
+<p>Move the mouse over the image below to open the dropdown content.</p>
+
+<div class="dropdown3">
+  <img src="img_5terre.jpg" alt="Cinque Terre" width="100" height="50">
+  <div class="dropdown-content3">
+  <img src="img_5terre.jpg" alt="Cinque Terre" width="300" height="200">
+  <div class="desc">Beautiful Cinque Terre</div>
+  </div>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<h1>Dropdown Menu inside a Navigation Bar</h1>
+<p>Hover over the "Dropdown" link to see the dropdown menu.</p>
+
+<ul class="drop">
+  <li class="list"><a href="#home" class="link">Home</a></li>
+  <li class="list"><a href="#news" class="link">News</a></li>
+  <li class="list dropdown4">
+    <a href="javascript:void(0)" class="link dropbtn2">Dropdown</a>
+    <div class="dropdown-content4">
+      <a href="#" class="link">Link 1</a>
+      <a href="#" class="link">Link 2</a>
+      <a href="#" class="link">Link 3</a>
+    </div>
+  </li>
+</ul>
+<br><br><br><br><br><br><br>
+
+<h1>Image Sprites</h1>
+<p>You can use the sprite image ("img_navsprites.gif") to create a navigation list by using an HTML list, because it can be a link and also supports a background image:</p>
+
+<ul id="navlist">
+  <li id="home"><a href="default.asp"></a></li>
+  <li id="prev"><a href="css_intro.asp"></a></li>
+  <li id="next"><a href="css_syntax.asp"></a></li>
+</ul>
+<br><br>
+
+<h1>Attribute Selector</h1>
+<h2>1. CSS [attribute~="value"] Selector</h2>
+<p>All images with the title attribute containing the word "flower" get a yellow border.</p>
+
+<img src="klematis.jpg" title="klematis flower" width="150" height="113">
+<img src="img_flwr.gif" title="flower" width="224" height="162">
+<img src="img_tree.gif" title="tree" width="200" height="358">
+
+<h2>2. CSS [attribute|="value"] Selector</h2>
+<p>The [attribute|="value"] selector is used to select elements with the specified attribute, whose value can be exactly <b>the specified value, or the specified value followed by a hyphen (-).</b></p>
+
+<p><strong>Note:</strong> The value has to be a whole word, either alone, like class="top", or followed by a hyphen( - ), like class="top-text".</p>
+
+<h1 class="top-header">Welcome</h1>
+<p class="top-text">Hello world!</p>
+<p class="topcontent">Are you learning CSS?</p>
+
+<h2>3. CSS [attribute^="value"] Selector</h2>
+<p>The [attribute^="value"] selector is used to select elements with the specified attribute, whose value <b>starts</b> with the specified value.
+
+The following example selects all elements with a class attribute value that starts with "top":</p>
+
+<p><b>Note:</b> The value does not have to be a whole word</p>
+
+<h1 class="initial-header">Welcome</h1>
+<p class="text-initial">Hello world!</p>
+<p class="initialcontent">Are you learning CSS?</p>
+
+<h2>4. CSS [attribute$="value"] Selector</h2>
+<p>The [attribute$="value"] selector is used to select elements whose attribute value <b>ends</b> with a specified value.
+
+The following example selects all elements with a class attribute value that ends with "test":</p>
+
+<p><b>Note:</b> The value does not have to be a whole word</p>
+
+<div class="first_test">The first div element.</div>
+<div class="testsecond">The second div element.</div>
+<div class="my-test">The third div element.</div>
+<p class="mytest">This is some text in a paragraph.</p>
+
+<h2>5. CSS [attribute*="value"] Selector</h2>
+<p>The [attribute*="value"] selector is used to select elements whose attribute value contains a <b>specified</b> value.
+
+The following example selects all elements with a class attribute value that contains "te":</p>
+
+<p><b>Note:</b> The value does not have to be a whole word</p>
+
+<div class="first_test">The first div element.</div>
+<div class="second_option">The second div element.</div>
+<div class="my-test">The third div element.</div>
+<p class="mytest">This is some text in a paragraph.</p>
+
+<h2>Styling Forms</h2>
+
+<form name="input" action="" method="get">
+  Firstname:<input type="text" name="Name" value="Peter" size="20">
+  Lastname:<input type="text" name="Name" value="Griffin" size="20">
+  <input type="button" value="Example Button">
+</form>
+
+</body>
+</html>
