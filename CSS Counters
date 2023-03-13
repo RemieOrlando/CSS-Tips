@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSS Tips: CSS Counters</title>
+<style>
+/* Automatic Counting With Numbers */
+body {
+  counter-reset: section;
+}
+
+h2.count::before {
+  counter-increment: section;
+  content: "Section " counter(section) ": ";
+}
+
+/* Nesting Counters */
+body.section {
+  counter-reset: section;
+}
+
+h2.count2 {
+  counter-reset: subsection;
+}
+
+h2.count2::before {
+  counter-increment: section;
+  content: "Section " counter(section) ". ";
+}
+
+h3.count3::before {
+  counter-increment: subsection;
+  content: counter(section) "." counter(subsection) " ";
+}
+</style>
+</head>
+<body class="section">
+
+<h1 style="color:navy" align="center">Using CSS Counters</h1>
+
+<h2 class="count">HTML Tutorial</h3>
+<h2 class="count">CSS Tutorial</h3>
+<h2 class="count">JavaScript Tutorial</h3>
+<h2 class="count">Python Tutorial</h3>
+<h2 class="count">SQL Tutorial</h3>
+
+<h1 style="color:navy" align="center">Nesting Counters</h1>
+
+<h2 class="count2">HTML/CSS Tutorials</h1>
+<h3 class="count3">HTML</h2>
+<h3 class="count3">CSS</h2>
+<h3 class="count3">Bootstrap</h2>
+<h3 class="count3">W3.CSS</h2>
+
+<h2 class="count2">Scripting Tutorials</h1>
+<h3 class="count3">JavaScript</h2>
+<h3 class="count3">jQuery</h2>
+<h3 class="count3">React</h2>
+
+<h2 class="count2">Programming Tutorials</h1>
+<h3 class="count3">Python</h2>
+<h3 class="count3">Java</h2>
+<h3 class="count3">C++</h2>
+
+</body>
+</html>
