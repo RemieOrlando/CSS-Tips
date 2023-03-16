@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSS Tips: Part 5</title>
+<style>
+body {
+ font-size:16px;
+}
+
+/* em */
+p.emp {
+  font-size: 16px;
+  line-height: 2em;
+}
+
+div.em {
+  font-size: 30px;
+  border: 1px solid black;
+}
+
+span.emsp {
+  font-size: 0.5em;
+}
+
+div.exdiv {
+  font-size: 30px;
+  border: 1px solid black;
+}
+
+/* ex */
+span.ex {
+  font-size: 1ex;
+}
+
+/* ch */
+div.ch {
+  font-size: 3ch;
+  border: 1px solid black;
+}
+
+/* rem */
+div.rem {
+  font-size: 2rem;
+  border: 1px solid black;
+}
+
+/* vw */
+p.vw {
+  font-size: 10vw;
+}
+
+/* vh */
+p.vh {
+  font-size: 10vh;
+}
+
+/* vmin */
+p.vmin {
+  font-size: 10vmin;
+}
+
+/* vmax */
+p.vmax {
+  font-size: 10vmax;
+}
+
+/* percent */
+div.percent {
+  font-size: 150%;
+  border: 1px solid black;
+}
+
+/* !important */
+#myid {
+  background-color: blue;
+}
+
+.myclass {
+  background-color: gray;
+}
+
+h4 {
+  background-color: red !important;
+}
+
+.button {
+  background-color: #8c8c8c; 
+  color: white;
+  padding: 5px;
+  border: 1px solid black; 
+}
+
+#myDiv a {
+  color: red;
+  background-color: yellow;  
+}
+
+.button {
+  background-color: #8c8c8c !important; 
+  color: white !important;
+  padding: 5px !important;
+  border: 1px solid black !important; 
+}
+
+#myDiv a {
+  color: red;
+  background-color: yellow;  
+}
+
+/* The calc() Function */
+#div1 {
+  position: absolute;
+  left: 50px;
+  width: calc(100% - 100px);
+  border: 1px solid black;
+  background-color: yellow;
+  padding: 5px;
+}
+
+/* The max() Function */
+#div2 {
+  background-color: yellow;
+  height: 100px;
+  width: max(50%, 300px);
+}
+
+/* The min() Function */
+#div3 {
+  background-color: yellow;
+  height: 100px;
+  width: min(50%, 300px);
+}
+
+/* The border-radius Property */
+#rcorners1 {
+  border-radius: 25px;
+  background: #73AD21;
+  padding: 20px; 
+  width: 200px;
+  height: 150px;  
+}
+
+#rcorners2 {
+  border-radius: 25px;
+  border: 2px solid #73AD21;
+  padding: 20px; 
+  width: 200px;
+  height: 150px;  
+}
+
+#rcorners3 {
+  border-radius: 25px;
+  background: url(paper.gif);
+  background-position: left top;
+  background-repeat: repeat;
+  padding: 20px; 
+  width: 200px;
+  height: 150px;  
+}
+
+#rcorners4 {
+  border-radius: 15px 50px;
+  background: #73AD21;
+  padding: 20px; 
+  width: 200px;
+  height: 150px; 
+}
+
+#rcorners5 {
+  border-radius: 50px / 15px;
+  background: #73AD21;
+  padding: 20px; 
+  width: 200px;
+  height: 150px; 
+}
+
+/* The border-image Property */
+#borderimg { 
+  border: 10px solid transparent;
+  padding: 15px;
+  border-image: url(border.png) 30 round;
+}
+
+#borderimg2 { 
+  border: 10px solid transparent;
+  padding: 15px;
+  border-image: url(border.png) 30 stretch;
+}
+
+/* Different Slice Values */
+#borderimg3 {
+  border: 10px solid transparent;
+  padding: 15px;
+  border-image: url(border.png) 50 round;
+}
+
+#borderimg4 {
+  border: 10px solid transparent;
+  padding: 15px;
+  border-image: url(border.png) 20% round;
+}
+
+#borderimg5 {
+  border: 10px solid transparent;
+  padding: 15px;
+  border-image: url(border.png) 30% round;
+}
+
+/* Multiple Backgrounds */
+#example1 {
+  background-image: url(img_flwr.gif), url(paper.gif);
+  background-position: right bottom, left top;
+  background-repeat: no-repeat, repeat;
+  padding: 15px;
+}
+
+#example2 {
+  background: url(img_tree.gif) left top no-repeat, url(img_flwr.gif) right bottom no-repeat, url(paper.gif) left top repeat;
+  padding: 15px;
+  background-size: 50px, 130px, auto;
+}
+
+/* Hero Image */
+.hero-image {
+  margin: 0;
+  background: url(img_man.jpg) no-repeat center; 
+  background-size: cover;
+  height: 500px;
+  position: relative;
+}
+
+.hero-text {
+  margin: 0;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+/* The background-clip Property */
+#example3 {
+  border: 10px dotted black;
+  padding: 35px;
+  background: powderblue;
+}
+
+#example4 {
+  border: 10px dotted black;
+  padding: 35px;
+  background: powderblue;
+  background-clip: padding-box;
+}
+
+#example5 {
+  border: 10px dotted black;
+  padding: 35px;
+  background: powderblue;
+  background-clip: content-box;
+}
+
+/* CSS Color Keywords */
+div.body {
+  background-image: url("paper.gif");
+}
+
+div.ex1 { 
+  background-color: lightgreen;
+  border: 2px solid black;
+  padding: 15px;
+}
+
+div.ex2 { 
+  background-color: transparent;
+  border: 2px solid black;
+  padding: 15px;
+}
+
+/* The currentcolor Keyword */
+div.current {
+  color: blue;
+  border: 10px solid currentcolor;
+  padding: 15px;  
+}
+
+/* The inherit Keyword */
+div.ex5 {
+  border: 2px solid red;
+}
+
+span.inherit {
+  border: inherit;
+}
+
+/* Linear Gradient */
+#grad1 {
+  height: 200px;
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: linear-gradient(powderblue, blue);
+}
+
+#grad2 {
+  height: 200px;
+  background-color: blue;
+  background-image: linear-gradient(to right, powderblue , green);
+}
+
+#grad3 {
+  height: 200px;
+  background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
+}
+
+#grad4 {
+  height: 150px;
+  width: 200px;
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: radial-gradient(white, powderblue, blue);
+}
+
+#grad5 {
+  height: 150px;
+  width: 200px;
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: radial-gradient(white, powderblue, blue);
+}
+
+#grad6 {
+  height: 150px;
+  width: 200px;
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: radial-gradient(circle, white, powderblue, blue);
+}
+
+#grad7 {
+  height: 200px;
+  width: 200px;
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: conic-gradient(powderblue 45deg, blue 90deg, navy 210deg);
+}
+
+#grad8 {
+  height: 200px;
+  width: 200px;
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: conic-gradient(white, powderblue, blue, navy, darkblue);
+  border-radius: 50%;
+}
+
+#grad9 {
+  height: 200px;
+  width: 200px;
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: repeating-conic-gradient(white 10%, powderblue 20%);
+  border-radius: 50%;
+}
+
+/* Text Shadow */
+.glow {
+  text-shadow: 0 0 3px #FF0000;
+}
+
+/* Box-shadow */
+.box-shadow {
+  width: 300px;
+  height: 100px;
+  padding: 15px;
+  background-color: coral;
+}
+
+.box-shadow:hover {
+  box-shadow: 10px 10px 5px lightblue;
+}
+
+/* Text Overflow */
+p.test1 {
+  white-space: nowrap; 
+  width: 200px; 
+  border: 1px solid #000000;
+  overflow: hidden;
+  text-overflow: clip;
+}
+
+p.test2 {
+  white-space: nowrap; 
+  width: 200px; 
+  border: 1px solid #000000;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Word-wrap */
+p.test3 {
+  width: 11em; 
+  border: 1px solid #000000;
+  word-wrap: break-word;
+}
+
+/* Word-break */
+p.test4 {
+  width: 140px; 
+  border: 1px solid #000000;
+  word-break: keep-all;
+}
+
+p.test5 {
+  width: 140px; 
+  border: 1px solid #000000;
+  word-break: break-all;
+}
+
+/* Writing-mode */
+p.test6 {
+  writing-mode: horizontal-tb; 
+}
+
+span.test1 {
+  writing-mode: vertical-rl; 
+}
+
+p.test7 {
+  writing-mode: vertical-rl; 
+}
+
+/* CSS Web Fonts */
+@font-face {
+   font-family: myFirstFont;
+   src: url(sansation_light.woff);
+}
+
+@font-face {
+   font-family: myFirstFont;
+   src: url(sansation_bold.woff);
+   font-weight: bold;
+}
+
+.font {
+   font-family: myFirstFont;
+}
+</style>
+</head>
+<body>
+
+<h1>CSS Tips: Part 5</h1>
+<p>The font-size of this document is 16px.</p>
+
+<h2>Relative Units</h2>
+
+<h3>1. "em"</h3>
+<p class="emp">This paragraphs have a calculated line-height of: 2x16px = 32px.</p>
+
+<div class="em">The font-size of the div element is set to 30px. <span class="emsp">The span element inside the div element has a font-size of 0.5em, which equals to 0.5x30 = 15px</span>.</div>
+
+<h3>2. "ex"</h3>
+<div class="exdiv">The font-size of the div element is set to 30px. <span class="ex">The span element inside the div element has a font-size of 1ex</span>.</div>
+
+<h3>3. "ch"</h3>
+
+<div class="ch">The font-size of this div element is 3ch.</div>
+
+<p>The ch unit sets the font-size relative to the width of the character "0".</p>
+
+<h3>4. "rem"</h3>
+<div class="rem">The font-size of this div element is 2rem.</div>
+
+<p>The rem unit sets the font-size relative to the browsers base font-size, and will not inherit from its parents.</p>
+
+<h3>5. "vw"</h3>
+<p class="vw">Hello</p>
+
+<p>Resize the width of the browser window to see how the font-size of p changes. 1vw = 1% of viewport width.</p>
+
+<h3>6. "vh"</h3>
+<p class="vh">Hello</p>
+
+<p>Resize the height of the browser window to see how the font-size of p changes. 1vh = 1% of viewport height.</p>
+
+<h3>7. "vmin"</h3>
+<p class=vmin>Hello</p>
+
+<p>Resize the browser window (both width and height) to see how the font-size of p changes. 1vmin = 1vw or 1vh, whichever is smaller.</p>
+
+<h3>8. "vmax"</h3>
+<p class="vmax">Hello</p>
+
+<p>Resize the browser window (both width and height) to see how the font-size of p changes. 1vmax = 1vw or 1vh, whichever is larger.</p>
+<p><b>Note:</b>The vmax unit is not supported in Internet Explorer or Safari 6.1 and earlier versions.</p>
+
+<h3>9. "%"</h3>
+<div class="percent">The font-size of this div element is 150%.</div>
+
+<p>The % unit sets the font-size relative to the current font-size.</p>
+
+<h2>The "!important" Property</h2>
+<p>The !important rule in CSS is used to add more importance to a property/value than normal. In fact, if you use the !important rule, it will override ALL previous styling rules for that specific property on that element</p>
+
+<h4>This is some text in a paragraph.</h4>
+
+<h4 class="myclass">This is some text in a paragraph.</h4>
+
+<h4 id="myid">This is some text in a paragraph.</h4>
+
+<h1>Higher Specificity</h1>
+<p>The look of a button can sometimes change if we put it inside another element with higher specificity, and the properties get in conflict. Here is an example of this:</p>
+
+<p>Standard button: <a class="button" href="default.asp">CSS Tutorial</a></p>
+
+<div id="myDiv">
+  <p>A link text inside myDiv: <a href="/html/">HTML Tutorial</a></p>
+  <p>A link button inside myDiv: <a href="/html/" class="button">HTML Tutorial</a></p>
+</div>
+
+<p>To "force" all buttons to have the same look, no matter what, we can add the !important rule to the properties of the button, like this:</p>
+
+<p>Standard button: <a class="button" href="default.asp">CSS Tutorial</a></p>
+
+<div id="myDiv">
+  <p>A link text inside myDiv: <a href="/html/">HTML Tutorial</a></p>
+  <p>A link button inside myDiv: <a href="/html/" class="button">HTML Tutorial</a></p>
+</div>
+
+<h1>CSS Math Functions</h1>
+<h2>1. The calc() Function</h2>
+
+<p>Create a div that stretches across the window, with a 50px gap between both sides of the div and the edges of the window:</p>
+
+<div id="div1">Some text...</div><br><br>
+
+<h2>2. The max() Function</h2>
+
+<p>Use max() to set the width of #div1 to whichever value is largest, 50% or 300px:</p>
+
+<div id="div2">Some text...</div>
+
+<p>Resize the browser window to see the effect.</p>
+
+<h2>The min() Function</h2>
+
+<p>Use min() to set the width of #div1 to whichever value is smallest, 50% or 300px:</p>
+
+<div id="div3">Some text...</div>
+
+<p>Resize the browser window to see the effect.</p>
+
+<h1>The border-radius Property</h1>
+
+<p>Rounded corners for an element with a specified background color:</p>
+<p id="rcorners1">Rounded corners!</p>
+<p>Rounded corners for an element with a border:</p>
+<p id="rcorners2">Rounded corners!</p>
+<p>Rounded corners for an element with a background image:</p>
+<p id="rcorners3">Rounded corners!</p>
+<p>Two values - border-radius: 15px 50px:</p>
+<p id="rcorners4"></p>
+<p>Elliptical border - border-radius: 50px / 15px:</p>
+<p id="rcorners5"></p>
+
+<h1>The border-image Property</h1>
+
+<p>Here, the middle sections of the image are repeated to create the border:</p>
+<p id="borderimg">border-image: url(border.png) 30 round;</p>
+
+<p>Here is the original image:</p><img src="border.png">
+<p><strong>Note:</strong> Internet Explorer 10, and earlier versions, do not support the border-image property.</p>
+
+<p>Here, the middle sections of the image are stretched to create the border:</p>
+<p id="borderimg2">border-image: url(border.png) 30 stretch;</p>
+
+<p>Here is the original image:</p><img src="border.png">
+
+<h2>Different Slice Values</h2>
+
+<p><b>Example 1</b></p>
+<p id="borderimg3">border-image: url(border.png) 50 round;</p>
+<p><b>Example 2</b></p>
+<p id="borderimg4">border-image: url(border.png) 20% round;</p>
+<p><b>Example 3</b></p>
+<p id="borderimg5">border-image: url(border.png) 30% round;</p>
+
+<h1>Multiple Backgrounds</h1>
+<p>The following div element has two background images:</p>
+
+<div id="example1">
+  <h1>Lorem Ipsum Dolor</h1>
+  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+  <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+</div>
+
+<h2>Multiple Background Sizes</h2>
+<p>The following example has three background images specified, with different background-size value for each image:</p>
+
+<div id="example2">
+  <h1>Lorem Ipsum Dolor</h1>
+  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+  <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+</div>
+
+<div style="font-family: Arial, Helvetica, sans-serif">
+  <h1>Hero Image</h1>
+  <p>You could also use different background properties on a "div" to create a hero image (a large image with text), and place it where you want.</p>
+
+  <p><b>Note:</b> This technique will also make the image responsive: Resize the browser window to see the effect.</p>
+</div>
+
+<div class="hero-image">
+  <div class="hero-text">
+    <h1 style="font-size:50px">I am John Doe</h1>
+    <h3>And I'm a Photographer</h3>
+    <button>Hire me</button>
+  </div>
+</div>
+
+<h1>The background-clip Property</h1>
+
+<p>No background-clip (border-box is default):</p>
+<div id="example3">
+  <h2>Lorem Ipsum Dolor</h2>
+  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+</div>
+
+<p>background-clip: padding-box:</p>
+<div id="example4">
+  <h2>Lorem Ipsum Dolor</h2>
+  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+</div>
+
+<p>background-clip: content-box:</p>
+<div id="example5">
+  <h2>Lorem Ipsum Dolor</h2>
+  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+</div>
+
+<h1>CSS Color Keywords</h1>
+<div class="body">
+  <h2>1. The transparent Keyword</h2>
+  <div class="ex1">This div has a light green background.</div>
+  <br>
+  <div class="ex2">This div has a transparent background.</div>
+</div>
+
+<h2>2. The currentcolor Keyword</h2>
+
+<p>The currentcolor keyword refers to the current value of the color property of an element.</p>
+
+<div class="current">
+This div element has a blue text color and a blue border.
+</div>
+
+<h2>3. The inherit Keyword</h2>
+
+<div class="ex5">Here, the <span class="inherit">span element's</span> border settings will be inherited from the parent element.</div>
+<br>
+
+<div style="border:2px dotted blue;">Here, the <span class="inherit">span element's</span> border settings will also be inherited from the parent element.</div>
+
+<h1>Gradients</h1>
+<h2>1. Linear Gradient - Top to Bottom</h2>
+<p>This linear gradient starts red at the top, transitioning to yellow at the bottom:</p>
+
+<div id="grad1"></div>
+
+<h2>2. Linear Gradient - Left to Right</h2>
+<p>This linear gradient starts powder blue at the left, transitioning to green (to the right):</p>
+
+<div id="grad2"></div>
+
+<h2>3. Linear Gradient - Transparency</h2>
+<p>To add transparency, we use the rgba() function to define the color stops. The last parameter in the rgba() function can be a value from 0 to 1, and it defines the transparency of the color: 0 indicates full transparency, 1 indicates full color (no transparency).</p>
+
+<div id="grad3"></div>
+
+<h2>4. Radial Gradient - Evenly Spaced Color Stops</h2>
+<p>The following example shows a radial gradient with evenly spaced color stops:</p>
+
+<div id="grad4"></div>
+
+<h1>5. Radial Gradient - Shapes</h1>
+<p>The shape parameter defines the shape. It can take the value circle or ellipse. The default value is ellipse.</p>
+
+<h2>(i) Ellipse:</h2>
+<div id="grad5"></div>
+
+<h2>(ii) Circle:</h2>
+<p>The following example shows a radial gradient with the shape of a circle:</p>
+<div id="grad6"></div>
+
+<h2>6. Conic Gradient - Defined degree for each color</h2>
+<p>The following example shows a conic gradient with three colors and a degree for each color:</p>
+
+<div id="grad7"></div>
+
+<h2>7. Conic Gradient - Pie Chart</h2>
+<p>Create Pie Charts
+Just add border-radius: 50% to make the conic gradient look like a pie:</p>
+
+<div id="grad8"></div>
+
+<h2>8. Repeating a Conic Gradient</h2>
+<p>The repeating-conic-gradient() function is used to repeat conic gradients:</p>
+
+<div id="grad9"></div>
+
+<h1>CSS Shadows</h1>
+<h2>1. Text Shadow</h2>
+<p>The following example shows a red neon glow shadow:</p>
+<h2 class="glow">Text with red neon shadow glow!</h2>
+
+<h2>2. The box-shadow Property</h2>
+<p>Hover over the 'div' element to display shadow effect</p>
+
+<div class="box-shadow">A div element with a 5px blurred, lightblue box-shadow.</div>
+
+<h1>Text Effects</h1>
+<h2>1. The text-overflow Property</h2>
+<p>The following two paragraphs contains a long text that will not fit in the box.</p>
+
+<h3>(i) text-overflow: clip:</h3>
+<p class="test1">This is some long text that will not fit in the box</p>
+
+<h3>(ii) text-overflow: ellipsis:</h3>
+<p class="test2">This is some long text that will not fit in the box</p>
+
+<h2>2. The word-wrap Property</h2>
+
+<p class="test3">This paragraph contains a very long word: thisisaveryveryveryveryveryverylongword. The long word will break and wrap to the next line.</p>
+
+<h2>3. The word-break Property</h2>
+
+<p class="test4">This paragraph contains some text. This line will-break-at-hyphens.</p>
+
+<p class="test5">This paragraph contains some text. The lines will break at any character.</p>
+
+<h2>4. The writing-mode Property</h2>
+
+<p class="test6">Some text with default writing-mode.</p>
+
+<p>Some text with a span element with a <span class="test1">vertical-rl</span> writing-mode.</p>
+
+<p class="test7">Some text with writing-mode: vertical-rl.</p>
+
+<div class="font">
+  <h1>The @font-face Rule</h1>
+  <div>
+    With CSS, websites can use fonts other than the pre-selected "web-safe" fonts.
+  </div>
+  <div>
+    You must add another @font-face rule containing descriptors for <b>bold text.</b>
+  </div>
+</div>
+
+</body>
+</html>
